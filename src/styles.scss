@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+
+//**********************
+// #1 - Variables
+//**********************
+
+// #1.1 - BS4
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+);
+
+
+//**********************
+// #2 - Imports
+//**********************
+
+// bootrap4 grid and layout only. usefull with angular materials
+// npm i bootstrap-4-grid
+// @import "../node_modules/bootstrap-4-grid/scss/grid.scss";
+
+// bootrap4 scss
+// npm i bootstrap-scss
+@import "../node_modules/bootstrap-scss/bootstrap.scss";
+
+
+//**********************
+// #3 - RESET
+//**********************
+html, body{
+  margin: 0; padding: 0;
+}
+ul, ol, li, dl, dt, dd{
+  display: block;
+  margin: 0; padding: 0; list-style: none;
+}
+
+
+//**********************
+// #4 - STRUCTURE BASE
+//**********************
+html, body{
+  margin: 0; padding: 0;
+  width: 100%; height: auto;
+}
