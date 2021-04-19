@@ -29,7 +29,7 @@ const routes: Routes = [
     loadChildren: () => import('./components/recipes/recipes.module').then(m => m.RecipesModule)
   },
   {
-    path: 'shopping',
+    path: 'shopping', // lazy
     loadChildren: () => import('./components/shopping/shopping.module').then(m => m.ShoppingModule)
   },
   {
