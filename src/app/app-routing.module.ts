@@ -24,9 +24,10 @@ const routes: Routes = [
   // {
   //   path: "user", // lazy
   // },
-  // {
-  //   path: "recepies", // lazy
-  // },
+  {
+    path: "recipes", // lazy
+    loadChildren: () => import('./components/recipes/recipes.module').then(m => m.RecipesModule)
+  },
   // {
   //   path: "shopping", // lazy
   // },
