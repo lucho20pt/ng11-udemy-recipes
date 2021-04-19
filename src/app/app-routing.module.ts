@@ -28,9 +28,10 @@ const routes: Routes = [
     path: "recipes", // lazy
     loadChildren: () => import('./components/recipes/recipes.module').then(m => m.RecipesModule)
   },
-  // {
-  //   path: "shopping", // lazy
-  // },
+  {
+    path: 'shopping',
+    loadChildren: () => import('./components/shopping/shopping.module').then(m => m.ShoppingModule)
+  },
   {
     path: '**', component: PageNotFoundComponent
   }
