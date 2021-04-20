@@ -1,5 +1,36 @@
-<p><strong>recipe-list works!</strong></p>
 
-<app-recipe-item></app-recipe-item>
-<app-recipe-item></app-recipe-item>
+<aside class="row">
+  <div class="col-12">
+    <button class="btn btn-success">New Recipe</button>
+  </div>
+</aside>
+
+<hr>
+
+<section class="recipes">
+
+  <div class="row my-2"
+    *ngFor="let recipe of recipes; let i=index"
+  >
+
+    <div class="col-3">
+      <img class="img-fluid" [alt]="recipe.name" [src]="recipe.imagePath">
+    </div>
+
+    <div class="col-6">
+      <span></span>
+      <h3>{{recipe.name}}</h3>
+      <p>{{recipe.description}}</p>
+    </div>
+
+    <div class="col-3 text-right">
+      <button class="btn btn-primary">click</button>
+    </div>
+
+  </div>
+
+</section>
+
+<hr>
+
 <app-recipe-item></app-recipe-item>
