@@ -3,9 +3,11 @@
 
   <h4 class="py-2"># Recipe list</h4>
 
-  <app-recipe-item
-    [data-recipe]="recipe"
+  <app-recipe-item class="d-flex p-3"
     *ngFor="let recipe of recipes; let i=index"
+    [data-recipe]="recipe"
+    (data-recipe-selected)="onSelectedRecipe($event)"
+    [class.selected]="selectedRecipe === recipe"
   ></app-recipe-item>
 
 </section>

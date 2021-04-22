@@ -10,9 +10,16 @@ export class RecipeListComponent implements OnInit {
 
   @Input('data-recipes') recipes!: Recipe[];
 
+  selectedRecipe?: Recipe;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelectedRecipe(recipe: Recipe): void {
+    this.selectedRecipe = recipe;
+    console.log(this.selectedRecipe);
   }
 
 }
