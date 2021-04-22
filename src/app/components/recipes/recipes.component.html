@@ -17,12 +17,13 @@
     <!-- <app-recipe-list></app-recipe-list> -->
     <app-recipe-list
       [data-recipes]="recipes"
+      (data-recipe-selected)="recipeSelected($event)"
     ></app-recipe-list>
   </div>
 
   <!-- recipe-detail -->
   <div class="col-md-5 ml-auto">
-    <app-recipe-detail></app-recipe-detail>
+    <app-recipe-detail *ngIf="selectedRecipe"></app-recipe-detail>
   </div>
 
 </div>

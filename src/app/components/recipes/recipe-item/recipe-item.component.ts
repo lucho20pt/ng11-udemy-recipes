@@ -7,7 +7,7 @@ import { Recipe } from 'src/app/shared/model/recipe';
   styleUrls: ['./recipe-item.component.scss']
 })
 export class RecipeItemComponent implements OnInit {
-  
+
   @Input('data-recipe') recipe!: Recipe;
 
   @Output('data-recipe-selected') selectedRecipe = new EventEmitter<Recipe>();
