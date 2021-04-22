@@ -1,15 +1,25 @@
 <p><strong>recipes works!</strong></p>
 
-<section class="row">
+<aside>
+  <div class="row">
+    <div class="col-12">
+      <button class="btn btn-success">New Recipe</button>
+    </div>
+  </div>
+</aside>
 
-  <!-- list -->
+<hr>
+
+<div class="row">
+
+  <!-- recipes-list -->
   <div class="col-md-6">
-    <app-recipe-list></app-recipe-list>
+    <app-recipe-list [data-recipes]="recipes"></app-recipe-list>
   </div>
 
-  <!-- detail -->
-  <div class="col-md-6">
+  <!-- recipe-detail -->
+  <div class="col-md-5 ml-auto">
     <app-recipe-detail></app-recipe-detail>
   </div>
 
-</section>
+</div>

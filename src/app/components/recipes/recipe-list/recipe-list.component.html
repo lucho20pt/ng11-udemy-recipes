@@ -1,36 +1,12 @@
 
-<aside class="row">
-  <div class="col-12">
-    <button class="btn btn-success">New Recipe</button>
-  </div>
-</aside>
+<section class="recipe-list">
 
-<hr>
+  <h4 class="py-2"># Recipe list</h4>
 
-<section class="recipes">
-
-  <div class="row my-2"
+  <app-recipe-item
+    [data-recipe]="recipe"
     *ngFor="let recipe of recipes; let i=index"
-  >
-
-    <div class="col-3">
-      <img class="img-fluid" [alt]="recipe.name" [src]="recipe.imagePath">
-    </div>
-
-    <div class="col-6">
-      <span></span>
-      <h3>{{recipe.name}}</h3>
-      <p>{{recipe.description}}</p>
-    </div>
-
-    <div class="col-3 text-right">
-      <button class="btn btn-primary">click</button>
-    </div>
-
-  </div>
+  ></app-recipe-item>
 
 </section>
 
-<hr>
-
-<app-recipe-item></app-recipe-item>
