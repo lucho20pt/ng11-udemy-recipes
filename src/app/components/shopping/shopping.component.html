@@ -4,12 +4,16 @@
 
   <!--  -->
   <div class="col-md-6 my-4 my-md-0">
-    <app-shop-edit></app-shop-edit>
+    <app-shop-edit
+      (data-ingredient-added)="onIngredientAdded($event)"
+    ></app-shop-edit>
   </div>
 
   <!--  -->
   <div class="col-md-6">
-    <app-shop-list></app-shop-list>
+    <app-shop-list
+      [data-ingredients]="ingredients"
+    ></app-shop-list>
   </div>
 
 </section>

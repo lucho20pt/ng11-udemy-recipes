@@ -8,7 +8,11 @@ import { ShopEditComponent } from './shop-edit/shop-edit.component';
 
 
 @NgModule({
-  declarations: [ShoppingComponent, ShopListComponent, ShopEditComponent],
+  declarations: [
+    ShoppingComponent,
+    ShopListComponent,
+    ShopEditComponent
+  ],
   imports: [
     CommonModule,
     ShoppingRoutingModule
