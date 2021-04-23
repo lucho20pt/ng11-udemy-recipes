@@ -10,7 +10,7 @@ export class RecipeItemComponent implements OnInit {
 
   @Input('data-recipe') recipe!: Recipe;
 
-  @Output('data-recipe-selected') selectedRecipe = new EventEmitter<Recipe>();
+  @Output('data-recipe-selected') selectRecipe = new EventEmitter<Recipe>();
 
   constructor() { }
 
@@ -19,10 +19,10 @@ export class RecipeItemComponent implements OnInit {
   }
 
   onSelectRecipe(recipe : Recipe) {
-    // console.log('onSelectItem ' + recipe.name);
-    // this.selectedRecipe = recipe;
-    // console.log(this.selectedRecipe);
-    this.selectedRecipe.emit(recipe);
+    // console.log('selectRecipe ' + recipe.name);
+    // this.selectRecipe = recipe;
+    // console.log(this.selectRecipe);
+    this.selectRecipe.emit(recipe);
   }
 
 }

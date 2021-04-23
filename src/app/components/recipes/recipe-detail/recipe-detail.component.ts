@@ -8,12 +8,12 @@ import { Recipe } from 'src/app/shared/model/recipe';
 })
 export class RecipeDetailComponent implements OnInit {
 
-  @Input('data-selected-recipe') selectedRecipe?: Recipe;
+  @Input('data-selected-recipe') recipe?: Recipe;
 
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
 }

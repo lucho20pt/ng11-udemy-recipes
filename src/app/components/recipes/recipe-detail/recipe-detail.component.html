@@ -5,7 +5,7 @@
   <div class="row">
 
     <div class="col-8">
-      <img class="img-fluid" [src]="selectedRecipe?.imagePath" [alt]="selectedRecipe?.name">
+      <img class="img-fluid" [src]="recipe?.imagePath" [alt]="recipe?.name">
     </div>
 
     <div class="col-4 text-right">
@@ -26,11 +26,11 @@
   <div class="row">
 
     <div class="col-12">
-      <h4>{{selectedRecipe?.name}}</h4>
+      <h4>{{recipe?.name}}</h4>
     </div>
 
     <div class="col-12">
-      <p>{{selectedRecipe?.description}}</p>
+      <p>{{recipe?.description}}</p>
     </div>
 
     <div class="col-12">

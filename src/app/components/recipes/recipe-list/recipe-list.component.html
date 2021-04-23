@@ -7,7 +7,7 @@
     class="d-block border p-2 mb-2"
     *ngFor="let recipe of recipes; let i=index"
     [data-recipe]="recipe"
-    (data-recipe-selected)="onSelectRecipe($event)"
+    (data-recipe-selected)="onRecipeSelected($event)"
     [class.selected]="isSelected === recipe"
   ></app-recipe-item>
 
