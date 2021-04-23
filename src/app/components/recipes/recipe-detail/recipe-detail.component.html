@@ -4,11 +4,11 @@
 
   <div class="row">
 
-    <div class="col-6">
-      <img class="img-fluid" src="" alt="">
+    <div class="col-8">
+      <img class="img-fluid" [src]="selectedRecipe?.imagePath" [alt]="selectedRecipe?.name">
     </div>
 
-    <div class="col-6 text-right">
+    <div class="col-4 text-right">
       <div class="btn-group" role="group">
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
           Manage Recipe
@@ -26,11 +26,11 @@
   <div class="row">
 
     <div class="col-12">
-      <h4>Recipe Name...</h4>
+      <h4>{{selectedRecipe?.name}}</h4>
     </div>
 
     <div class="col-12">
-      <p>Description...</p>
+      <p>{{selectedRecipe?.description}}</p>
     </div>
 
     <div class="col-12">

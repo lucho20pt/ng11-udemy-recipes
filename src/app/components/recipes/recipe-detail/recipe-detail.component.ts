@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Recipe } from 'src/app/shared/model/recipe';
 
 @Component({
@@ -8,11 +8,12 @@ import { Recipe } from 'src/app/shared/model/recipe';
 })
 export class RecipeDetailComponent implements OnInit {
 
-  selectedRecipe?: Recipe;
+  @Input('data-selected-recipe') selectedRecipe?: Recipe;
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

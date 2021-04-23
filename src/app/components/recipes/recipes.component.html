@@ -23,7 +23,11 @@
 
   <!-- recipe-detail -->
   <div class="col-md-5 ml-auto">
-    <app-recipe-detail *ngIf="selectedRecipe"></app-recipe-detail>
+    <app-recipe-detail
+      [data-selected-recipe]="selectedRecipe"
+      *ngIf="selectedRecipe"
+
+    ></app-recipe-detail>
   </div>
 
 </div>
