@@ -2,8 +2,19 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <!-- header -->
+    <app-header></app-header>
+    <!-- main -->
+    <main class="container">
+      <router-outlet></router-outlet>
+    </main>
+    <!-- footer -->
+    <app-footer></app-footer>
+  `,
+  styles: [`
+    .container { color: var(--dark); }
+  `]
 })
 export class AppComponent {
   title = 'Udemy Recipes';
