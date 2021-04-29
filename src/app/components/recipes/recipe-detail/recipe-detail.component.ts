@@ -20,7 +20,11 @@ export class RecipeDetailComponent implements OnInit {
 
   selectedRecipe(): void {
     this.recipeService.selectedRecipe
-      .subscribe( (arg:Recipe) => {this.recipe = arg} );
+      .subscribe( (arg:Recipe) => {
+        this.recipe = arg;
+        console.log('selectedRecipe() subscribe' + arg);
+      } );
+      // console.log('selectedRecipe() subscribe');
   }
 
 }

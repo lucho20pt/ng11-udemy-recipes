@@ -31,7 +31,7 @@ export class RecipeService {
 
   getSelectedRecipe(recipe: Recipe): void {
     this.selectedRecipe.emit(recipe);
-    console.log('getSelectedRecipe(recipe) : Service');
+    console.log('getSelectedRecipe(recipe) : EventEmitter');
   }
 
 }
