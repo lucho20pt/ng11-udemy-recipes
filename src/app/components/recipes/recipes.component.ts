@@ -17,23 +17,25 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
     <div class="row">
       <!-- recipes-list -->
       <div class="col-md-6">
-        <app-recipe-list></app-recipe-list>
+        <h4 class="py-2"># Recipe detail</h4>
+        <app-recipe-list
+          [data-selected-recipe]="selectedRecipe"
+        ></app-recipe-list>
       </div>
       <!-- recipe-detail -->
       <div class="col-md-5 ml-auto">
+        <h4 class="py-2"># Recipe list</h4>
         <app-recipe-detail
           [data-selected-recipe]="selectedRecipe"
         ></app-recipe-detail>
       </div>
     </div>
   `,
-  styles: [`
-
-  `]
+  styles: []
 })
 export class RecipesComponent implements OnInit {
 
-  selectedRecipe?: Recipe;
+  selectedRecipe!: Recipe;
 
   constructor( private recipeService: RecipeService ) { }
 
