@@ -10,7 +10,7 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
 export class RecipeDetailComponent implements OnInit {
 
   // @Input('data-selected-recipe') recipe?: Recipe;
-  recipe?: Recipe;
+  @Input() recipe?: Recipe;
 
   constructor( private recipeService: RecipeService ) { }
 
@@ -24,7 +24,6 @@ export class RecipeDetailComponent implements OnInit {
         this.recipe = arg;
         console.log('selectedRecipe() subscribe' + arg);
       } );
-      // console.log('selectedRecipe() subscribe');
   }
 
 }
