@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Recipe } from 'src/app/shared/model/recipe';
+import { RecipeService } from 'src/app/shared/services/recipe.service';
 
 @Component({
   selector: 'app-recipes',
@@ -20,28 +21,32 @@ import { Recipe } from 'src/app/shared/model/recipe';
       </div>
       <!-- recipe-detail -->
       <div class="col-md-5 ml-auto">
-        <app-recipe-detail></app-recipe-detail>
+        <app-recipe-detail
+          [data-selected-recipe]="selectedRecipe"
+        ></app-recipe-detail>
       </div>
     </div>
   `,
   styles: [`
-    p{
-      color:red;
-    }
+
   `]
 })
 export class RecipesComponent implements OnInit {
 
   selectedRecipe?: Recipe;
 
-  constructor() { }
+  constructor( private recipeService: RecipeService ) { }
 
   ngOnInit(): void {
+    this.getSelectedRecipe();
   }
 
-  recipeSelected(recipe: Recipe): void {
-    this.selectedRecipe = recipe;
-    console.log(this.selectedRecipe);
+  getSelectedRecipe(): void {
+    this.recipeService.selectedRecipe
+      .subscribe( (arg:Recipe) => {
+        this.selectedRecipe = arg;
+        console.log('selectedRecipe() subscribe' + arg);
+      } );
   }
 
 }

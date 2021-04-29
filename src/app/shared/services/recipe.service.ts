@@ -28,10 +28,5 @@ export class RecipeService {
   getRecipes(): Recipe[] {
     return this.recipes.slice();
   }
-
-  // getSelectedRecipe(recipe: Recipe): void {
-  //   this.selectedRecipe.emit(recipe);
-  //   console.log('getSelectedRecipe(recipe) : EventEmitter');
-  // }
-
+  
 }
