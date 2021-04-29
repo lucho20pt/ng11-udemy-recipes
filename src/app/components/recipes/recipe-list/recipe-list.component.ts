@@ -15,13 +15,13 @@ export class RecipeListComponent implements OnInit {
 
   isSelected?: Recipe;
 
-  constructor( private recipesService: RecipeService) { }
+  constructor( private recipesService: RecipeService ) { }
 
   ngOnInit(): void {
-    this.getRecipes();
+    this.getRecipesService();
   }
 
-  getRecipes(): void {
+  getRecipesService(): void {
     this.recipes = this.recipesService.getRecipes();
   }
 
