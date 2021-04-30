@@ -8,6 +8,7 @@
         <li class="list-group-item"
           *ngFor="let ingredient of ingredients; let i=index"
         >
+          {{ingredient.id}}
           {{ingredient.name}}
           ({{ingredient.amount}})
         </li>

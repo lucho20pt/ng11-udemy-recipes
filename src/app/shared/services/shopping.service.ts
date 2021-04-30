@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Ingredient } from 'src/app/shared/model/ingredient';
 
 @Injectable({
@@ -6,7 +6,7 @@ import { Ingredient } from 'src/app/shared/model/ingredient';
 })
 export class ShoppingService {
 
-  public ingredients: Ingredient[] = [
+  private ingredients: Ingredient[] = [
     {
       id: 1,
       name: 'tomato',
@@ -18,11 +18,18 @@ export class ShoppingService {
       amount: 10
     },
   ];
+  // this event is to update array copy
+  ingredientsArrChange = new EventEmitter<Ingredient[]>();
 
   constructor() { }
 
   getIngredients() {
     return this.ingredients.slice();
+  }
+
+  addIngredient(ingredient: Ingredient) {
+    this.ingredients.push(ingredient);
+    this.ingredientsArrChange.emit(this.ingredients.slice());
   }
 
 }
