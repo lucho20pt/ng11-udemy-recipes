@@ -18,11 +18,16 @@ export class ShopEditComponent implements OnInit {
   }
 
   onAddIngredient() {
-    const id = Math.floor(Math.random() * 100);
-    const name = this.nameInputRef.nativeElement.value;
-    const amount = this.amountInputRef.nativeElement.value;
+    let id = Math.floor(Math.random() * 100);
+    let name = this.nameInputRef.nativeElement.value;
+    let amount = this.amountInputRef.nativeElement.value;
     const ingredient = {id, name, amount}
+    // on add ingredient - verify if not empty
+    if( (ingredient.name && ingredient.amount) !== "" )
     this.shoppingService.addIngredient(ingredient);
+    // after add ingredient - clear the fields
+    this.nameInputRef.nativeElement.value = "";
+    this.amountInputRef.nativeElement.value = "";
   }
 
 }
