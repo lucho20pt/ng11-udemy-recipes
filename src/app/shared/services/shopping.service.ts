@@ -39,7 +39,7 @@ export class ShoppingService {
     // }
     this.ingredients.push(...ingredients);
     this.ingredientsArrChange.emit(this.ingredients.slice());
-    console.log(this.ingredients);
+    // console.log(this.ingredients);
   }
 
 }

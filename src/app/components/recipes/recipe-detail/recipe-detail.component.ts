@@ -18,7 +18,12 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   onAddToShopList() {
-    this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+    // console.log(this.recipe.ingredients);
+    if ( this.recipe.ingredients.length !== 0 ) {
+      this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+    }else{
+      console.log('empty []');
+    }
   }
 
 }
