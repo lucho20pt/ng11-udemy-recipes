@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 import { LayoutModule } from './components/layout/layout.module';
 import { PagesModule } from './components/pages/pages.module';
+import { RecipeService } from './shared/services/recipe.service';
+import { ShoppingService } from './shared/services/shopping.service';
 
 
 
@@ -19,7 +21,10 @@ import { PagesModule } from './components/pages/pages.module';
     LayoutModule,
     PagesModule
   ],
-  providers: [],
+  providers: [
+    RecipeService,
+    ShoppingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
