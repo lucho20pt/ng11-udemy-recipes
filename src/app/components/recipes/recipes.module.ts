@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DropdownDirective } from 'src/app/shared/directives/dropdown.directive';
-// import { RecipeService } from 'src/app/shared/services/recipe.service';
+import { DirectivesModule } from 'src/app/shared/directives/directives.module';
 
 import { RecipesRoutingModule } from './recipes-routing.module';
 import { RecipesComponent } from './recipes.component';
@@ -16,14 +15,12 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
     RecipeListComponent,
     RecipeItemComponent,
     RecipeDetailComponent,
-    DropdownDirective
   ],
   imports: [
     CommonModule,
-    RecipesRoutingModule
+    RecipesRoutingModule,
+    DirectivesModule
   ],
-  providers: [
-    // RecipeService
-  ]
+  providers: []
 })
 export class RecipesModule { }

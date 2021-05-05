@@ -4,6 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 
+import { DirectivesModule } from 'src/app/shared/directives/directives.module';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    DirectivesModule
   ],
   exports: [
     HeaderComponent,
