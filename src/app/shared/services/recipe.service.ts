@@ -10,7 +10,7 @@ export class RecipeService {
 
   private recipes: Recipe[] = [
     {
-      id: 1,
+      id: 2,
       name: 'Hamburger',
       description: "The best burger in town",
       imagePath: "//images.freeimages.com/images/large-previews/9ac/fastfood-01-1329727.jpg",
@@ -33,7 +33,7 @@ export class RecipeService {
       ]
     },
     {
-      id: 2,
+      id: 4,
       name: 'Salad',
       description: "A Super Salad",
       imagePath: "https://images.freeimages.com/images/large-previews/f3f/food-1171568.jpg",
@@ -46,7 +46,7 @@ export class RecipeService {
       ]
     },
     {
-      id: 3,
+      id: 6,
       name: 'Angel Soup',
       description: "Rock of the Angels Soup",
       imagePath: "https://images.freeimages.com/images/large-previews/178/angel-soup-1575351.jpg",
@@ -60,6 +60,10 @@ export class RecipeService {
 
   getRecipes(): Recipe[] {
     return this.recipes.slice();
+  }
+
+  getRecipe(index:number) {
+    return this.recipes[index];
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {

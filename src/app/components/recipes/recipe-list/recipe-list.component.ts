@@ -6,25 +6,20 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
   selector: 'app-recipe-list',
   template: `
     <section class="recipe-list">
-      <app-recipe-item class="d-block border p-2 mb-2"
+
+      <app-recipe-item
         *ngFor="let recipe of recipes; let i=index"
         [data-recipe]="recipe"
-        [class.selected]="isSelected === recipe"
+        [data-recipe-index]="i"
       ></app-recipe-item>
+
     </section>
   `,
-  styles: [`
-    .selected{
-      color: var(--white);
-      background-color: var(--dark);
-    }
-  `]
+  styles: []
 })
 export class RecipeListComponent implements OnInit {
 
   recipes!: Recipe[];
-
-  @Input('data-selected-recipe') isSelected?: Recipe;
 
   constructor( private recipesService: RecipeService ) { }
 
