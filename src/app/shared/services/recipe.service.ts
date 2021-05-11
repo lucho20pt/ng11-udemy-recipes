@@ -62,8 +62,15 @@ export class RecipeService {
     return this.recipes.slice();
   }
 
-  getRecipe(index:number) {
+  getRecipeByIndex(index:number) {
     return this.recipes[index];
+  }
+
+  getRecipeByID(id:number) {
+    const recipe = this.recipes.find(
+      r => r.id === id
+    )
+    return recipe;
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {

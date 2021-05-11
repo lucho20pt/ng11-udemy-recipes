@@ -17,8 +17,7 @@ import { Recipe } from 'src/app/shared/model/recipe';
 
       <div class="col-3 text-right">
         <a class="btn btn-primary"
-          [routerLink]="['recipe-detail/', index]"
-
+          [routerLink]="['recipe-detail/', id]"
         >
           details
         </a>
@@ -37,6 +36,7 @@ export class RecipeItemComponent implements OnInit {
 
   @Input('data-recipe') recipe!: Recipe;
   @Input('data-recipe-index') index!: number;
+  @Input('data-recipe-id') id!: number;
 
   ngOnInit(): void {
 

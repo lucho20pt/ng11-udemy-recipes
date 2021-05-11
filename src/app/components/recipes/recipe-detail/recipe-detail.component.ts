@@ -10,8 +10,9 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
 })
 export class RecipeDetailComponent implements OnInit {
 
-  recipe!: Recipe;
-  id?: number;
+  recipe?: Recipe;
+  id!: number;
+  index!: number;
 
   constructor(
     private recipeService: RecipeService,
@@ -19,17 +20,32 @@ export class RecipeDetailComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    // this.getRecipeByIndex();
+    this.getRecipeByID();
+  }
+
+  getRecipeByIndex() {
     this.route.params.subscribe(
       (params: Params) => {
-        this.id = +params['id'];
-        this.recipe = this.recipeService.getRecipe(this.id);
+        this.index = +params['index'];
+        this.recipe = this.recipeService.getRecipeByIndex(this.index);
       }
     );
   }
 
+  getRecipeByID() {
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.id = +params['id'];
+        this.recipe = this.recipeService.getRecipeByID(this.id);
+      }
+    )
+  }
+
   onAddToShopList() {
-    if ( this.recipe.ingredients.length !== 0 ) {
-      this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+    const ingredients = this.recipe.ingredients;
+    if ( ingredients.length !== 0 ) {
+      this.recipeService.addIngredientsToShoppingList(ingredients);
     }else{
       console.log('empty []');
     }
