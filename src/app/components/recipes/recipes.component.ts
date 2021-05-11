@@ -1,17 +1,19 @@
 import { Component} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipes',
   template: `
-    <hr>
     <aside class="py-2">
       <div class="row">
-        <div class="col-12">
-          <button class="btn btn-success">New Recipe</button>
+        <div class="col-12 | d-flex justify-content-end">
+          <a class="btn btn-success"
+            (click)="onNewRecipe()"
+          >New Recipe</a>
         </div>
       </div>
     </aside>
-    <hr>
+
     <div class="row">
       <!-- recipes-list -->
       <div class="col-md-6">
@@ -20,7 +22,6 @@ import { Component} from '@angular/core';
       </div>
       <!-- recipe-detail -->
       <div class="col-md-5 ml-auto">
-        <h4 class="py-2"># Recipe detail</h4>
         <router-outlet></router-outlet>
       </div>
     </div>
@@ -28,5 +29,16 @@ import { Component} from '@angular/core';
   styles: []
 })
 export class RecipesComponent {
+
+  id?: number;
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+    ) { }
+
+  onNewRecipe(): void {
+    this.router.navigate(['new'], { relativeTo: this.route })
+  }
 
 }

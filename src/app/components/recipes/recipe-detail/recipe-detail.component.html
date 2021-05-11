@@ -1,5 +1,7 @@
 <section class="recipe-detail">
 
+  <h4 class="py-2"># Recipe detail</h4>
+
   <div class="row" *ngIf="recipe">
 
     <div class="col-8">
@@ -21,6 +23,7 @@
             (click)="onAddToShopList()"
           >To Shop List</a>
           <a class="dropdown-item" style="cursor: pointer;"
+            [routerLink]="['edit']"
           >Edit Recipe</a>
           <a class="dropdown-item" style="cursor: pointer;"
           >Delete Recipe</a>
