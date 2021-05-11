@@ -23,7 +23,7 @@ export class RecipeDetailComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.paramsSubscription = this.route.params.subscribe(
       (params: Params) => {
-        this.index = +params['index'];
+        this.index = Number(params['index']);
         this.recipe = this.recipeService.getRecipeByIndex(this.index);
       }
     );
