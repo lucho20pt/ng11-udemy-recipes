@@ -23,7 +23,7 @@
             (click)="onAddToShopList()"
           >To Shop List</a>
           <a class="dropdown-item" style="cursor: pointer;"
-            [routerLink]="['edit']"
+            (click)="onEditRecipe(recipe.id)"
           >Edit Recipe</a>
           <a class="dropdown-item" style="cursor: pointer;"
           >Delete Recipe</a>

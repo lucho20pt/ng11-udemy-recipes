@@ -18,7 +18,7 @@ const routes: Routes = [
         component: RecipeDetailComponent
       },
       {
-        path: ':index/edit',
+        path: ':id/edit',
         component: RecipeEditComponent
       },
     ]

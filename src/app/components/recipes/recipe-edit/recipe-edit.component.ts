@@ -22,6 +22,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeEditComponent implements OnInit {
 
+  id?: number;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -30,8 +30,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RecipesComponent {
 
-  id?: number;
-
   constructor(
     private router: Router,
     private route: ActivatedRoute
