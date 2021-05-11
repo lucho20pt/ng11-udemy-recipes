@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Recipe } from 'src/app/shared/model/recipe';
 import { RecipeService } from 'src/app/shared/services/recipe.service';
 
@@ -8,11 +9,11 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
   templateUrl: './recipe-detail.component.html',
   styleUrls: ['./recipe-detail.component.scss']
 })
-export class RecipeDetailComponent implements OnInit {
+export class RecipeDetailComponent implements OnInit, OnDestroy {
 
   recipe!: Recipe;
-  id!: number;
   index!: number;
+  paramsSubscription!: Subscription;
 
   constructor(
     private recipeService: RecipeService,
@@ -20,12 +21,7 @@ export class RecipeDetailComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.getRecipeByIndex();
-    // this.getRecipeByID();
-  }
-
-  getRecipeByIndex() {
-    this.route.params.subscribe(
+    this.paramsSubscription = this.route.params.subscribe(
       (params: Params) => {
         this.index = +params['index'];
         this.recipe = this.recipeService.getRecipeByIndex(this.index);
@@ -33,14 +29,9 @@ export class RecipeDetailComponent implements OnInit {
     );
   }
 
-  // getRecipeByID() {
-  //   this.route.params.subscribe(
-  //     (params: Params) => {
-  //       this.id = +params['id'];
-  //       this.recipe = this.recipeService.getRecipeByID(this.id);
-  //     }
-  //   )
-  // }
+  ngOnDestroy(): void {
+    this.paramsSubscription.unsubscribe();
+  }
 
   onAddToShopList() {
     const ingredients = this.recipe.ingredients;
