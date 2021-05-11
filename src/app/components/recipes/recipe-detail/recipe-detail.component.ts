@@ -10,7 +10,7 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
 })
 export class RecipeDetailComponent implements OnInit {
 
-  recipe?: Recipe;
+  recipe!: Recipe;
   id!: number;
   index!: number;
 
@@ -20,8 +20,8 @@ export class RecipeDetailComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    // this.getRecipeByIndex();
-    this.getRecipeByID();
+    this.getRecipeByIndex();
+    // this.getRecipeByID();
   }
 
   getRecipeByIndex() {
@@ -33,14 +33,14 @@ export class RecipeDetailComponent implements OnInit {
     );
   }
 
-  getRecipeByID() {
-    this.route.params.subscribe(
-      (params: Params) => {
-        this.id = +params['id'];
-        this.recipe = this.recipeService.getRecipeByID(this.id);
-      }
-    )
-  }
+  // getRecipeByID() {
+  //   this.route.params.subscribe(
+  //     (params: Params) => {
+  //       this.id = +params['id'];
+  //       this.recipe = this.recipeService.getRecipeByID(this.id);
+  //     }
+  //   )
+  // }
 
   onAddToShopList() {
     const ingredients = this.recipe.ingredients;

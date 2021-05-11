@@ -11,7 +11,6 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
         *ngFor="let recipe of recipes; let i=index"
         [data-recipe]="recipe"
         [data-recipe-index]="i"
-        [data-recipe-id]="recipe.id"
       ></app-recipe-item>
 
     </section>

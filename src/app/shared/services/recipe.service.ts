@@ -66,12 +66,12 @@ export class RecipeService {
     return this.recipes[index];
   }
 
-  getRecipeByID(id:number) {
-    const recipe = this.recipes.find(
-      r => r.id === id
-    )
-    return recipe;
-  }
+  // getRecipeByID(id:number) {
+  //   const recipe = this.recipes.find(
+  //     r => r.id === id
+  //   )
+  //   return recipe;
+  // }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.shoppingService.addIngredients(ingredients);
