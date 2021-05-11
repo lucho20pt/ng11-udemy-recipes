@@ -9,7 +9,7 @@ const routes: Routes = [
     component: RecipesComponent,
     children: [
       {
-        path: 'recipe-detail/:index',
+        path: 'detail/:index',
         component: RecipeDetailComponent
       }
     ]

@@ -17,7 +17,7 @@ import { Recipe } from 'src/app/shared/model/recipe';
 
       <div class="col-3 text-right">
         <a class="btn btn-primary"
-          [routerLink]="['recipe-detail/', index]"
+          [routerLink]="['detail/', index]"
         >
           details
         </a>
