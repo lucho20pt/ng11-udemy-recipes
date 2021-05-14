@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Ingredient } from 'src/app/shared/model/ingredient';
 
 @Injectable({
@@ -19,7 +20,7 @@ export class ShoppingService {
     }
   ];
   // this event is to update array copy
-  ingredientsArrChange = new EventEmitter<Ingredient[]>();
+  ingredientsArrChange = new Subject<Ingredient[]>();
 
   constructor() { }
 
@@ -29,17 +30,12 @@ export class ShoppingService {
 
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
-    this.ingredientsArrChange.emit(this.ingredients.slice());
+    this.ingredientsArrChange.next(this.ingredients.slice());
   }
 
   addIngredients(ingredients: Ingredient[]) {
-    // console.log(ingredients);
-    // for (let ingredient of ingredients) {
-    //   this.addIngredient(ingredient);
-    // }
     this.ingredients.push(...ingredients);
-    this.ingredientsArrChange.emit(this.ingredients.slice());
-    // console.log(this.ingredients);
+    this.ingredientsArrChange.next(this.ingredients.slice());
   }
 
 }
