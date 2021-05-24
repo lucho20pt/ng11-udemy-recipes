@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-// import { ShoppingService } from 'src/app/shared/services/shopping.service';
+import { FormsModule } from '@angular/forms';
 
 import { ShoppingRoutingModule } from './shopping-routing.module';
 import { ShoppingComponent } from './shopping.component';
@@ -18,10 +17,9 @@ import { ShopEditComponent } from './shop-edit/shop-edit.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ShoppingRoutingModule
   ],
-  providers: [
-    // ShoppingService
-  ]
+  providers: []
 })
 export class ShoppingModule { }
