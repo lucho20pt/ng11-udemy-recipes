@@ -11,7 +11,7 @@ import { ShoppingService } from 'src/app/shared/services/shopping.service';
 export class ShopListComponent implements OnInit, OnDestroy {
 
   ingredients!: Ingredient[];
-  private ingArrChangeSub!: Subscription
+  private ingArrChangeSub!: Subscription;
 
   constructor( private shoppingService: ShoppingService ) { }
 
@@ -25,6 +25,10 @@ export class ShopListComponent implements OnInit, OnDestroy {
       .subscribe(
         ( arg: Ingredient[] ) => this.ingredients = arg
       );
+  }
+
+  onEditIngredient(index: number): void {
+    this.shoppingService.startedEditingIngredient.next(index);
   }
 
   ngOnDestroy(): void {

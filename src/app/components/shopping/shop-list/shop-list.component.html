@@ -8,9 +8,15 @@
         <li class="list-group-item"
           *ngFor="let ingredient of ingredients; let i=index"
         >
-          {{ingredient.id}}
-          {{ingredient.name}}
-          ({{ingredient.amount}})
+          <div class="d-flex">
+            {{ingredient.id}}
+            {{ingredient.name}}
+            ({{ingredient.amount}})
+            <button class="btn btn-info ml-auto"
+            (click)="onEditIngredient(i)"
+          >edit</button>
+          </div>
+
         </li>
       </ul>
 
