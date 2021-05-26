@@ -9,12 +9,10 @@ export class ShoppingService {
 
   private ingredients: Ingredient[] = [
     {
-      id: 1,
       name: 'tomato',
       amount: 54
     },
     {
-      id: 2,
       name: 'hamburger',
       amount: 10
     }
@@ -40,6 +38,13 @@ export class ShoppingService {
 
   addIngredients(ingredients: Ingredient[]) {
     this.ingredients.push(...ingredients);
+    this.ingredientsArrChange.next(this.ingredients.slice());
+  }
+
+  updateIngredient(index: number, newIngredient: Ingredient) {
+    console.log(this.ingredients[index].name);
+    this.ingredients[index] = newIngredient;
+    console.log(this.ingredients[index].name);
     this.ingredientsArrChange.next(this.ingredients.slice());
   }
 

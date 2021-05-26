@@ -16,17 +16,14 @@ export class RecipeService {
       imagePath: "//images.freeimages.com/images/large-previews/9ac/fastfood-01-1329727.jpg",
       ingredients: [
         {
-          id: 1,
           name: "bread",
           amount: 2
         },
         {
-          id: 2,
           name: "burger",
           amount: 1
         },
         {
-          id: 3,
           name: "egg",
           amount: 1
         }
@@ -39,7 +36,6 @@ export class RecipeService {
       imagePath: "https://images.freeimages.com/images/large-previews/f3f/food-1171568.jpg",
       ingredients: [
         {
-          id: 5,
           name: 'tomato',
           amount: 1
         }
