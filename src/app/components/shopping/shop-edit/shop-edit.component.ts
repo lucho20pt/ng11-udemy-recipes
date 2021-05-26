@@ -12,32 +12,31 @@ import { ShoppingService } from 'src/app/shared/services/shopping.service';
 export class ShopEditComponent implements OnInit, OnDestroy {
 
   @ViewChild('f', { static: false }) form!: NgForm;
-  editIngredientSub!: Subscription;
-  editIngredientIndex!: number;
+  editedIngredientSub!: Subscription;
+  editedIngredientIndex!: number;
   editMode: boolean = false;
-  editingIngredient!: Ingredient;
+  ingredient!: Ingredient;
 
   constructor( private shoppingService: ShoppingService) { }
 
   ngOnInit(): void {
-    this.editIngredientSub = this.shoppingService.startedEditingIngredient
+    this.editedIngredientSub = this.shoppingService.startedEditingIngredient
       .subscribe(
         (index:number) => {
-          this.editIngredientIndex = index;
+          this.editedIngredientIndex = index;
           this.editMode = true;
-          this.editingIngredient = this.shoppingService.getIngredient(this.editIngredientIndex);
+          this.ingredient = this.shoppingService.getIngredient(index);
 
             this.form.setValue({
-              name: this.editingIngredient.name,
-              amount: +this.editingIngredient.amount
+              name: this.ingredient.name,
+              amount: this.ingredient.amount
             })
-
         }
       );
   }
 
   ngOnDestroy(): void {
-    this.editIngredientSub.unsubscribe();
+    this.editedIngredientSub.unsubscribe();
   }
 
   onAddIngredient(form: NgForm) {
