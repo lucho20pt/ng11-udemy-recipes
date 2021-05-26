@@ -42,9 +42,12 @@ export class ShoppingService {
   }
 
   updateIngredient(index: number, newIngredient: Ingredient) {
-    console.log(this.ingredients[index].name);
     this.ingredients[index] = newIngredient;
-    console.log(this.ingredients[index].name);
+    this.ingredientsArrChange.next(this.ingredients.slice());
+  }
+
+  deleteIngredient(index: number) {
+    this.ingredients.splice(index, 1);
     this.ingredientsArrChange.next(this.ingredients.slice());
   }
 
