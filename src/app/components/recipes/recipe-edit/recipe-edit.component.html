@@ -1,7 +1,7 @@
 <section class="recipe-edit">
   <h4 class="py-2"># Recipe {{ editMode ? "Edit" : "New Recipe" }}</h4>
 
-  <form>
+  <form [formGroup]="recipeForm">
 
     <!-- Submit -->
     <div class="row">
@@ -23,6 +23,7 @@
             class="form-control"
             name="name"
             placeholder="Name..."
+            formControlName="name"
           />
         </div>
       </div>
@@ -39,6 +40,7 @@
             rows="3"
             name="imagePath"
             placeholder="Image url..."
+            formControlName="imagePath"
             ></textarea
           >
         </div>
@@ -46,7 +48,9 @@
 
       <div class="col-3">
         <label>&nbsp;</label>
-        <img class="img-fluid" src="" alt="" />
+        <img class="img-fluid"
+        [src]="recipeForm.get('imagePath')?.value"
+        [alt]="recipeForm.get('name')?.value" />
       </div>
     </div>
 
@@ -61,6 +65,7 @@
             rows="2"
             name="description"
             placeholder="Description..."
+            [formControlName]="'description'"
             ></textarea
           >
         </div>
