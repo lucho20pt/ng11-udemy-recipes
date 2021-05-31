@@ -2,6 +2,17 @@
   <h4 class="py-2"># Recipe {{ editMode ? "Edit" : "New Recipe" }}</h4>
 
   <form>
+
+    <!-- Submit -->
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-success mx-1" type="submit">Save</button>
+          <button class="btn btn-danger" type="button">Cancel</button>
+        </div>
+      </div>
+    </div>
+
     <!-- name -->
     <div class="row">
       <div class="col-12">
@@ -11,8 +22,7 @@
             type="text"
             class="form-control"
             name="name"
-            [value]="recipe?.name"
-            ngModel
+            placeholder="Name..."
           />
         </div>
       </div>
@@ -28,15 +38,15 @@
             class="form-control"
             rows="3"
             name="imagePath"
-            ngModel
-            >{{ recipe?.imagePath }}</textarea
+            placeholder="Image url..."
+            ></textarea
           >
         </div>
       </div>
 
       <div class="col-3">
         <label>&nbsp;</label>
-        <img class="img-fluid" [src]="recipe?.imagePath" alt="" />
+        <img class="img-fluid" src="" alt="" />
       </div>
     </div>
 
@@ -50,62 +60,50 @@
             class="form-control"
             rows="2"
             name="description"
-            ngModel
-            >{{ recipe?.description }}</textarea
+            placeholder="Description..."
+            ></textarea
           >
         </div>
       </div>
     </div>
 
     <!-- ingredients -->
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-12">
         <div class="form-group">
           <label for="ingredients"> Ingredients </label>
 
           <div
             class="row mb-2"
-            *ngFor="let ingredient of recipe?.ingredients; let i = index"
           >
             <div class="col-9">
-              <label *ngIf="i == 0" for="">Name</label>
+              <label for="">Name</label>
               <input
                 type="text"
                 class="form-control"
-                name="ingredients"
-                ngModel
-                [value]="ingredient?.name"
+                name="name"
+                placeholder="Ingredient name..."
               />
             </div>
 
             <div class="col-2">
-              <label *ngIf="i == 0" for="">Amount</label>
+              <label for="">Amount</label>
               <input
                 type="number"
                 class="form-control"
-                name="ingredients"
-                ngModel
-                [value]="ingredient?.amount"
+                name="amount"
+                placeholder="1"
               />
             </div>
             <div class="col-1">
-              <label *ngIf="i == 0" for="">&nbsp;</label>
+              <label for="">&nbsp;</label>
               <button class="btn btn-danger">X</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <hr>
-
-    <!-- Submit -->
-    <div class="row">
-      <div class="col-12">
-        <div class="form-group d-flex">
-          <button class="btn btn-success ml-auto" type="submit">Save</button>
-        </div>
-      </div>
-    </div>
   </form>
+
 </section>
