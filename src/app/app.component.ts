@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     <!-- header -->
     <app-header></app-header>
     <!-- main -->
-    <main class="container">
+    <main class="container mb-5">
       <router-outlet></router-outlet>
     </main>
     <!-- footer -->
