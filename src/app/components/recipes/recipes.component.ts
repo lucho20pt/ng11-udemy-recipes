@@ -16,12 +16,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 
     <div class="row">
       <!-- recipes-list -->
-      <div class="col-md-6">
+      <div class="col-md-5">
         <h4 class="py-2"># Recipe list</h4>
         <app-recipe-list></app-recipe-list>
       </div>
       <!-- recipe-detail -->
-      <div class="col-md-5 ml-auto">
+      <div class="col-md-6 ml-auto">
         <router-outlet></router-outlet>
       </div>
     </div>

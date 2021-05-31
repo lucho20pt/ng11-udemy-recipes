@@ -5,26 +5,10 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
 
 @Component({
   selector: 'app-recipe-edit',
-  template: `
-    <section class="recipe-edit">
-
-      <h4 class="py-2"># Recipe edit</h4>
-
-      <div class="row">
-
-        <div class="col-8">
-          <!-- <h2>{{recipe.name}}</h2>
-          <p>{{recipe.description}}</p>
-          <p>{{recipe.imagePath}}</p>
-          <p>{{recipe.ingredients}}</p> -->
-        </div>
-
-      </div>
-
-    </section>
-  `,
-  styles: [
-  ]
+  templateUrl: './recipe-edit.component.html',
+  styles: [`
+    label{ font-weight: 700;}
+  `]
 })
 export class RecipeEditComponent implements OnInit {
 
@@ -34,7 +18,7 @@ export class RecipeEditComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    // private recipeService: RecipeService
+    private recipeService: RecipeService
   ) { }
 
   ngOnInit(): void {
@@ -43,7 +27,7 @@ export class RecipeEditComponent implements OnInit {
         this.editMode = params['index'] != null;
         this.index = params['index'];
         console.log(this.editMode);
-        // this.recipe = this.recipeService.getRecipeByIndex(this.index);
+        this.recipe = this.recipeService.getRecipeByIndex(this.index);
         if( this.editMode ) {
           console.log('"edit" mode');
         }else{

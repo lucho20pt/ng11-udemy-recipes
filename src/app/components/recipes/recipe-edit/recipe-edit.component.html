@@ -1,0 +1,111 @@
+<section class="recipe-edit">
+  <h4 class="py-2"># Recipe {{ editMode ? "Edit" : "New Recipe" }}</h4>
+
+  <form>
+    <!-- name -->
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            [value]="recipe?.name"
+            ngModel
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- img -->
+    <div class="row">
+      <div class="col-9">
+        <div class="form-group">
+          <label for="imagePath"> Image Url </label>
+          <textarea
+            type="text"
+            class="form-control"
+            rows="3"
+            name="imagePath"
+            ngModel
+            >{{ recipe?.imagePath }}</textarea
+          >
+        </div>
+      </div>
+
+      <div class="col-3">
+        <label>&nbsp;</label>
+        <img class="img-fluid" [src]="recipe?.imagePath" alt="" />
+      </div>
+    </div>
+
+    <!-- description -->
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="description"> Description </label>
+          <textarea
+            type="text"
+            class="form-control"
+            rows="2"
+            name="description"
+            ngModel
+            >{{ recipe?.description }}</textarea
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- ingredients -->
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="ingredients"> Ingredients </label>
+
+          <div
+            class="row mb-2"
+            *ngFor="let ingredient of recipe?.ingredients; let i = index"
+          >
+            <div class="col-9">
+              <label *ngIf="i == 0" for="">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="ingredients"
+                ngModel
+                [value]="ingredient?.name"
+              />
+            </div>
+
+            <div class="col-2">
+              <label *ngIf="i == 0" for="">Amount</label>
+              <input
+                type="number"
+                class="form-control"
+                name="ingredients"
+                ngModel
+                [value]="ingredient?.amount"
+              />
+            </div>
+            <div class="col-1">
+              <label *ngIf="i == 0" for="">&nbsp;</label>
+              <button class="btn btn-danger">X</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Submit -->
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group d-flex">
+          <button class="btn btn-success ml-auto" type="submit">Save</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
