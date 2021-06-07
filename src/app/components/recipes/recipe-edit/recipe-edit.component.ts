@@ -10,8 +10,8 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
   templateUrl: './recipe-edit.component.html',
   styles: [`
     label{ font-weight: 700;}
-    input.ng-invalid,
-    textarea.ng-invalid{ border: 1px solid red }
+    input.ng-invalid.ng-touched,
+    textarea.ng-invalid.ng-touched{ border: 1px solid red }
   `]
 })
 export class RecipeEditComponent implements OnInit {
