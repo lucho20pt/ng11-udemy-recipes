@@ -9,7 +9,7 @@
       <div class="col-12">
         <div class="d-flex justify-content-end">
           <button class="btn btn-success mx-1" type="submit"
-            [disabled]="!recipeForm.valid || recipeForm.pristine"
+            [disabled]="!recipeForm.valid"
           >{{ editMode ? "Update Recipe" : "Add New Recipe" }}</button>
           <button class="btn btn-danger" type="button"
             (click)="onCancel()"
@@ -108,7 +108,9 @@
           </div>
 
           <div class="col-1">
-            <button class="btn btn-danger" type="button">X</button>
+            <button class="btn btn-danger" type="button"
+              (click)="onDeleteIngredient(i)"
+            >X</button>
           </div>
 
         </div>
