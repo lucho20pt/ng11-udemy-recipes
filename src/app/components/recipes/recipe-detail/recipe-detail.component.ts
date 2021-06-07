@@ -40,7 +40,6 @@ export class RecipeDetailComponent implements OnInit, OnDestroy {
 
   onDeleteRecipe(): void {
     this.recipeService.deleteRecipe(this.index);
-    console.log(this.index);
   }
 
   onAddToShopList() {

@@ -78,7 +78,6 @@ export class RecipeService {
   }
 
   deleteRecipe(index:number) {
-    console.log(index);
     this.recipes.splice(index, 1);
     this.recipesArrChange.next(this.recipes.slice());
   }
