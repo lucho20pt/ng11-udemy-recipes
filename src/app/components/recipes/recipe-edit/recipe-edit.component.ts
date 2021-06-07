@@ -10,6 +10,8 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
   templateUrl: './recipe-edit.component.html',
   styles: [`
     label{ font-weight: 700;}
+    input.ng-invalid,
+    textarea.ng-invalid{ border: 1px solid red }
   `]
 })
 export class RecipeEditComponent implements OnInit {
@@ -43,13 +45,17 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onAddIngredient() {
-    console.log('onAddIngredient');
+    // console.log('onAddIngredient');
     (this.recipeForm.get('ingredients') as FormArray).push(
       new FormGroup({
-        'name': new FormControl(),
-        'amount': new FormControl()
+        'name': new FormControl(null, Validators.required),
+        'amount': new FormControl(null, [
+          Validators.required,
+          Validators.pattern(/^[1-9]+[0-9]*$/)
+        ])
       })
     )
+    console.log(this.recipeForm.value);
   }
 
   private initRecipeForm(): void {
@@ -70,7 +76,10 @@ export class RecipeEditComponent implements OnInit {
           recipeIngredients.push(
             new FormGroup ({
               'name': new FormControl(ingredient.name, Validators.required),
-              'amount': new FormControl(ingredient.amount, Validators.required),
+              'amount': new FormControl(ingredient.amount, [
+                Validators.required,
+                Validators.pattern(/^[1-9]+[0-9]*$/)
+              ]),
             })
           )
         }

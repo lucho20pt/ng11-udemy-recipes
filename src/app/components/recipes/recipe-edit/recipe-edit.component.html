@@ -3,11 +3,14 @@
   <h4 class="py-2"># Recipe {{ editMode ? "Edit" : "New Recipe" }}</h4>
 
   <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+
     <!-- Submit -->
     <div class="row">
       <div class="col-12">
         <div class="d-flex justify-content-end">
-          <button class="btn btn-success mx-1" type="submit">Save</button>
+          <button class="btn btn-success mx-1" type="submit"
+            [disabled]="!recipeForm.valid || !recipeForm.touched"
+          >Save</button>
           <button class="btn btn-danger" type="button">Cancel</button>
         </div>
       </div>
@@ -87,7 +90,7 @@
               type="text"
               class="form-control"
               name="name"
-              placeholder="Ingredient name..."
+              placeholder="ingredient name..."
               [formControlName]="'name'"
             />
           </div>
@@ -97,7 +100,7 @@
               type="number"
               class="form-control"
               name="amount"
-              placeholder="1"
+              placeholder=""
               [formControlName]="'amount'"
             />
           </div>
